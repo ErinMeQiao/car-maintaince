@@ -1,0 +1,394 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	padding:0;
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+}
+div, h1, h2, h3, p, input, form, lable, img {
+	padding:0;
+	margin:0;
+}
+ul {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	font-size:0;
+	line-height:0;
+}
+#main {
+	width:100%;
+	margin:0 auto;
+}
+#top {
+	display:block;
+	width:970px;
+	height:50px;
+	color:#FFFFFF;
+	position:relative;
+	margin:0 auto;
+}
+#title {
+	width:157px;
+	height:26px;
+	display:block;
+	top:20px;
+	position:absolute;
+	background:url(images/title.gif) no-repeat 0 0;
+	float:left;
+}
+#tel {
+	float:right;
+	width:230px;
+	height:23px;
+	margin-top:25px;
+	background:url(images/tel.gif) no-repeat;
+}
+#color {
+	display:block;
+	width:100%;
+	background:url(images/headermenubg_01.gif) repeat-x #2A3FAA;
+	height:28px;
+}
+#ad {
+	display:block;
+	background:url(images/flash2.gif) no-repeat;
+	width:970px;
+	height:133px;
+	border:#e1e2e2 1px solid;
+	margin:10px auto;
+}
+#content {
+	display:block;
+	width:970px;
+	margin:0 auto;
+}
+#login {
+	float:left;
+	display:block;
+	width:264px;
+	background:url(images/bg.gif) 0 0 repeat-x #e1f2fa;
+	border:#92bbd0 1px solid;
+}
+#login ul {
+	width:240px;
+	margin-top:50px;
+	margin-left:15px;
+}
+#login ul li {
+	margin-left:15px;
+	width:210px;
+	margin-top:4px;
+}
+#login ul li label {
+	font: normal 12px/15px "宋体";
+	color:#000;
+}
+#login ul li input {
+	border:1px solid #7F9DB9;
+	width:147px;
+	height:20px;
+}
+#login ul li.verify input {
+	width:90px;
+}
+#login ul li.verify img {
+	margin-left:5px;
+	margin-top:3px;
+	width:48px;
+	height:14px;
+}
+#login ul li.buttons {
+	height:25px;
+	width:160px;
+	margin:10px auto;
+}
+#login ul li.buttons input {
+	width:61px;
+	height:22px;
+	border:0;
+	display:block;
+}
+.button_out {
+	display:block;
+	float:left;
+	background:url(images/botton1.gif) no-repeat;
+	width:61px;
+	height:22px;
+}
+#login ul li p {
+	display:block;
+	width:120px;
+	margin:5px auto;
+	font: normal 12px/14px "宋体";
+	color:#b5b5b5;
+}
+#letter {
+	display:block;
+	float:left;
+	margin-left:10px;
+	width:71%;
+	border:#e9e9e9 1px solid;
+}
+#letter p {
+	text-align:left;
+	font: normal 14px/25px "宋体";
+	padding:5px 10px 10px 15px;
+}
+#footer {
+	width:100%;
+	display:block;
+	height:20px;
+	float:left;
+	margin-top:15px;
+	border-top:#0000A0 2px solid;
+}
+#footer p {
+	font: normal 12px/25px "宋体";
+	text-align:center;
+}
+/*********功能页面function****************/
+#header {
+	display:block;
+	width:970px;
+	height:65px;
+	color:#FFFFFF;
+	margin:0 auto;
+}
+#logo {
+	width:361px;
+	height:65px;
+	float:left;
+	background:url(images/logo.gif) no-repeat;
+}
+#content {
+	margin:0 auto;
+	width:970px;
+}
+#menu {
+	float:left;
+	display:block;
+	width:180px;
+	height:370px;
+	border:#A0A0A4 1px solid;
+	margin-top:10px;
+}
+#menu ul {
+	display:block;
+	float:left;
+}
+#menu ul li {
+	width:180px;
+	margin-top:25px;
+	margin-left:0px;
+}
+#menu li a.menu_1 {
+	background:url(images/duizhang1.gif) no-repeat;
+	display:block;
+	height:62px;
+	width:170px;
+}
+#menu li a.menu_1:hover {
+	background:url(images/duizhang2.gif) no-repeat;
+}
+#menu li a.menu_2 {
+	background:url(images/lishi1.gif) no-repeat;
+	width:171px;
+	height:61px;
+	display:block;
+}
+#menu li a.menu_2:hover {
+	background:url(images/lishi2.gif) no-repeat;
+}
+#menu li a.menu_3 {
+	background:url(images/xinxi1.gif) no-repeat;
+	width:171px;
+	height:62px;
+	display:block;
+}
+#menu li a.menu_3:hover {
+	background:url(images/xinxi2.gif) no-repeat;
+}
+#menu li a.menu_4 {
+	background:url(images/xiugai1.gif) no-repeat;
+	width:171px;
+	height:53px;
+	display:block;
+}
+#menu li a.menu_4:hover {
+	background:url(images/xiugai2.gif) no-repeat;
+}
+#menu_main {
+	float:left;
+	display:block;
+	width:80%;
+	border:#A0A0A4 1px solid;
+	margin-top:10px;
+	margin-left:10px;
+}
+.tit_T {
+	height:25px;
+	font: bolder 14px/18px "宋体";
+	margin:8px 10px 10px 10px;
+	border-bottom:1px #A0A0A4 solid;
+}
+/*********修改密码 start************/
+.mima {
+	float:left;
+	display:block;
+	width:50%;
+	height:250px;
+	margin-top:10px;
+	margin-left:100px;
+	border:#d1e5eb 1px solid;
+}
+.mima ul {
+	margin-left:80px;
+	width:240px;
+	margin-top:20px;
+}
+.mima ul li {
+	margin-top:15px;
+	width:300px;
+	height:18px;
+}
+.mima ul li input {
+	border:1px solid #7F9DB9;
+	width:147px;
+	height:20px;
+}
+.mima ul li.buttons {
+	height:25px;
+	float:left;
+	margin:30px 10px 0 10px;
+}
+.mima ul li.buttons input {
+	width:61px;
+	height:22px;
+	border:0;
+	margin-left:10px;
+	display:block;
+}
+.button_out {
+	display:block;
+	background:url(images/botton1.gif) no-repeat;
+	width:120px;
+	height:22px;
+}
+.mima ul li label {
+	font: normal 12px/15px "宋体";
+	color:#000;
+}
+/*********修改密码end************/
+.userInfo {
+	border-collapse:collapse;
+	border:#ccc 1px solid;
+	width:97%;
+	margin-left:10px;
+}
+.userInfo table td {
+	text-align:left;
+	font-size:12px;
+	padding-left:5px;
+	padding-top:5px;
+}
+.userInfo table td select {
+	width:150px;
+	font-size:12px;
+}
+.button_1 {
+	BORDER-RIGHT: darkgray 1px solid;
+	BORDER-TOP: darkgray 1px solid;
+	FONT-SIZE: 9pt;
+	BACKGROUND: url(images/bottom_over.gif);
+	BORDER-LEFT: darkgray 1px solid;
+	CURSOR: hand;
+	BORDER-BOTTOM: darkgray 1px solid;
+	FONT-FAMILY: verdana;
+	HEIGHT: 20px
+}
+.button_1_over {
+	BORDER-RIGHT: darkgray 1px solid;
+	BORDER-TOP: darkgray 1px solid;
+	FONT-SIZE: 9pt;
+	BACKGROUND: url(images/bottom.gif);
+	BORDER-LEFT: darkgray 1px solid;
+	CURSOR: hand;
+	BORDER-BOTTOM: darkgray 1px solid;
+	FONT-FAMILY: Verdana, Arial;
+	HEIGHT: 20px
+}
+/********提示界面 start******/
+#alert {
+	width:355px;
+	height:161px;
+	margin-top:50px;
+	left:50%;
+	position:absolute;
+	margin-left:-175px;
+}
+.left {
+	background:url(images/alert/left.gif) 0 0 no-repeat;
+	width:11px;
+	height:161px;
+	float:left;
+}
+.middle {
+	background:url(images/alert/center.gif) 0 0 repeat-x;
+	width:330px;
+	height:161px;
+	float:left;
+}
+.title {
+	background:url(images/alert/center2.gif) no-repeat;
+	width:322px;
+	height:23px;
+	margin-top:1px;
+	font-size:12px;
+	text-align:center;
+	line-height:24px;
+}
+.message {
+	margin-left:10px;
+	margin-top:20px;
+	width:310px;
+}
+.message img {
+	display:block;
+	float:left;
+}
+.message ul.actionMessage{
+	font:normal 12px/24px "宋体";
+	float:left;
+	margin-left:8px;
+	margin-top:10px;
+}
+.message ul.errorMessage{
+	font:normal 12px/24px "宋体";
+	float:left;
+	margin-left:8px;
+	margin-top:10px;
+}
+.m_button {
+	width:100%;
+	float:left;
+	font:bold 12px/24px "宋体";
+	text-align:center;
+	margin-top:30px;
+}
+.m_button a {
+	color:#4996CF;
+	text-decoration:none;
+}
+.m_button a:hover {
+	color:#2A0000;
+	text-decoration:underline;
+}
+.right {
+	background:url(images/alert/right.gif) 0 0 no-repeat;
+	width:9px;
+	height:161px;
+	float:left;
+}
+/********提示界面 end******/

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                     http://www.springframework.org/schema/beans/spring-beans.xsd 
+                     http://www.springframework.org/schema/tx 
+                     http://www.springframework.org/schema/tx/spring-tx.xsd 
+                     http://www.springframework.org/schema/aop 
+                     http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- 用户管理  -->
+	<bean id="userManage"
+		class="com.wyq.hf.service.sysmanage.UserManageImpl">
+		<property name="userinfoDAO" ref="UserinfoDAO" />
+	</bean>
+	<!-- 用户登录 -->
+	<bean id="loginService"
+		class="com.wyq.hf.service.syslogin.SysLoginImpl">
+		<property name="userManage" ref="userManage" />
+	</bean>
+	<bean name="LoginAction"
+		class="com.wyq.hf.web.action.LoginAction" scope="prototype">
+		<property name="sysLogin" ref="loginService" />
+		<property name="userManage" ref="userManage" />
+	</bean>
+
+    <!-- 角色管理  -->
+	<bean id="roleManage"
+		class="com.wyq.hf.service.sysmanage.RoleManageImpl">
+		<property name="roleinfoDAO" ref="RoleinfoDAO" />
+	</bean>
+	
+	<!-- 菜单管理 -->
+	<bean id="menuManage"
+		class="com.wyq.hf.service.sysmanage.MenuManageImpl">
+		<property name="menuDAO" ref="MenuDAO" />
+		<property name="roleManage" ref="roleManage" />
+		<property name="userManage" ref="userManage" />
+	</bean>
+	<bean name="MenuManageAction"
+		class="com.wyq.hf.web.action.sysmanage.MenuManageAction" scope="prototype">
+		<property name="menuManage" ref="menuManage" />
+	</bean>	
+	<!-- 消费信息 -->
+	<bean id="payoutManager" class="com.wyq.hf.service.payout.PayoutManagerImpl">
+		<property name="payoutinfoDAO" ref="PayoutinfoDAO" />
+	</bean>
+	<bean name="payoutManagerAction" class="com.wyq.hf.web.action.payout.PayoutManagerAction" scope="prototype">
+		<property name="payoutManager" ref="payoutManager" />
+	</bean>
+	<!-- 收入信息 -->
+	<bean id="incomeManager" class="com.wyq.hf.service.income.IncomeManagerImpl">
+		<property name="incomeinfoDAO" ref="IncomeinfoDAO" />
+	</bean>
+	<bean name="incomeManagerAction" class="com.wyq.hf.web.action.income.IncomeManagerAction" scope="prototype">
+		<property name="incomeManager" ref="incomeManager" />
+	</bean>
+	
+	<!-- 理财信息 -->
+	<bean id="financeManager" class="com.wyq.hf.service.finance.FinanceManagerImpl">
+		<property name="financeinfoDAO" ref="FinanceinfoDAO" />
+	</bean>
+	<bean name="financeManagerAction" class="com.wyq.hf.web.action.finance.FinanceManagerAction" scope="prototype">
+		<property name="financeManager" ref="financeManager" />
+	</bean>
+	
+	<!-- 借贷信息 -->
+	<bean id="debitcreditManager" class="com.wyq.hf.service.debitcredit.DebitcreditManagerImpl">
+		<property name="debitcreditinfoDAO" ref="DebitcreditinfoDAO" />
+	</bean>
+	<bean name="debitcreditManagerAction" class="com.wyq.hf.web.action.debitcredit.DebitcreditManagerAction" scope="prototype">
+		<property name="debitcreditManager" ref="debitcreditManager" />
+	</bean>
+</beans>

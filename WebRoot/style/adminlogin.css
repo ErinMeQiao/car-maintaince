@@ -1,0 +1,21 @@
+body{font-size:12px; font-family:"����";margin:0; padding:0; text-align:center; background: #ecfaff;}
+
+.clear{ clear:both;}
+
+A{COLOR: #000000; FONT-FAMILY: , "Verdana";tEXT-DECORATION: none;}
+A:hover {COLOR: #000; FONT-FAMILY: , "Verdana";TEXT-DECORATION:underline;}
+
+#logo{ position:relative; top:165px;margin-left:auto; margin-right:auto;width:288px; height:52px; background:url(../images/htlogo.gif) no-repeat;}
+#wrapper{ position:relative;width:347px; height:213px;top:180px;background:url(../images/loginmain_bg.gif) no-repeat;}
+#cont{ position:absolute; top:88px; left:15px;}
+#cont ul{ margin:0; padding:0; clear:both; list-style:none;}
+#cont ul li{ float:left; padding:0 5px; line-height:30px; text-align:right; width:50px; color:#fff;}
+#cont span{padding:5px 0 0; line-height:18px;}
+#cont img{margin:2px 0 0;}
+#cont a{color:#fff;}
+#enterht{ position:absolute; left:255px; top:88px;}
+.inputstyle {
+	BORDER-RIGHT: #999 1px solid; BORDER-TOP: #666 1px solid; FONT-SIZE: 10pt; BACKGROUND-IMAGE: url(../images/inputstyle.gif); BORDER-LEFT: #999 1px solid; COLOR: #ff6600; BORDER-BOTTOM: #666 1px solid; FONT-FAMILY: , "Verdana"; HEIGHT: 22px;
+}
+.onepage{margin:0 0 0 -10px;}
+.onepage2{margin:0 0 0 -5px;}

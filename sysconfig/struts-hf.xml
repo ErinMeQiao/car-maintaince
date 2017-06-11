@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="hf"  namespace="/" extends="struts-default" abstract="true">
+		<interceptors>
+            <!-- 权限控制拦截器 -->
+            <interceptor name="authority" class="com.wyq.hf.web.action.util.AuthorizationInterceptor"/>            
+            <!-- 包含权限控制拦截器栈 -->
+            <interceptor-stack name="mydefault">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="authority" />
+            </interceptor-stack>            
+            <!-- displaytag拦截器，用于分页过滤 -->
+            <interceptor-stack name="displaytagStack">
+                <interceptor-ref name="params">
+    				<param name="excludeParams">d-.*-p,d-.*-e</param>
+				</interceptor-ref>
+                <interceptor-ref name="authority" />
+            </interceptor-stack>
+        </interceptors>        
+        <!-- 默认拦截器 -->
+        <default-interceptor-ref name="mydefault" />		
+		<global-results>
+			<result name="exception">/common/messages/exception.jsp</result>
+			<result name="error">/common/messages/message.jsp</result>
+			<result name="success">/common/messages/message.jsp</result>
+			<result name="relogin">/common/authoritypage.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping result="exception" exception="java.lang.NullPointerException"></exception-mapping>
+			<exception-mapping result="exception" exception="java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+	</package>
+	
+	<package name="sysmanage"  namespace="/sysmanage" extends="hf" abstract="true"></package>
+	
+	<!-- 登录 -->
+	<package name="login" namespace="/login" extends="hf">
+		<action name="adminlogin" class="LoginAction" method="sysLogin">
+			<result name="success">/webmain/index.jsp</result>
+			<result name="input">/adminlogin.jsp</result>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<action name="adminlogout" class="LoginAction" method="sysLogout">
+			<result name="success">/adminlogin.jsp</result>
+			<interceptor-ref name="defaultStack" />
+		</action>
+	</package>	
+	
+	<!-- 菜单权限管理 -->
+	<package name="menumanage" namespace="/sysmanage/menumanage"  extends="sysmanage">
+		<action name="findMenuList" class="MenuManageAction" method="findMenuList">
+			<result name="success">/webmain/left.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 支出信息管理 -->
+	<package name="payout" namespace="/payout"  extends="hf">
+		<action name="payoutlist" class="payoutManagerAction" method="findPayoutList">
+			<result name="success">/payout/payoutlist.jsp</result>
+		</action>
+		<action name="payoutadd" class="payoutManagerAction" method="payoutAdd">
+			<result name="success">/payout/payoutenter.jsp</result>
+		</action>
+		<action name="payoutenter" class="payoutManagerAction" method="payoutEnter"/>
+		<action name="payoutdelete" class="payoutManagerAction" method="payoutDelete"/>
+		<action name="payoutdetails" class="payoutManagerAction" method="payoutDetails">
+			<result name="success">/payout/payoutdetails.jsp</result>
+		</action>
+		<action name="payoutedit" class="payoutManagerAction" method="payoutDetails">
+			<result name="success">/payout/payoutedit.jsp</result>
+		</action>
+		<action name="payoutupdate" class="payoutManagerAction" method="payoutUpdate">
+			<result name="input">/payout/payoutedit.jsp</result>
+		</action>
+		<action name="enterapprove" class="payoutManagerAction" method="enterApprove"/>
+	</package>
+	
+	<!-- 收入信息管理 -->
+	<package name="income" namespace="/income"  extends="hf">
+		<action name="incomelist" class="incomeManagerAction" method="findIncomeList">
+			<result name="success">/income/incomelist.jsp</result>
+		</action>
+		<action name="incomeadd" class="incomeManagerAction" method="incomeAdd">
+			<result name="success">/income/incomeenter.jsp</result>
+		</action>
+		<action name="incomeenter" class="incomeManagerAction" method="incomeEnter"/>
+		<action name="incomedelete" class="incomeManagerAction" method="incomeDelete"/>
+		<action name="incomedetails" class="incomeManagerAction" method="incomeDetails">
+			<result name="success">/income/incomedetails.jsp</result>
+		</action>
+		<action name="incomeedit" class="incomeManagerAction" method="incomeDetails">
+			<result name="success">/income/incomeedit.jsp</result>
+		</action>
+		<action name="incomeupdate" class="incomeManagerAction" method="incomeUpdate">
+			<result name="input">/income/incomeedit.jsp</result>
+		</action>
+		<action name="enterapprove" class="incomeManagerAction" method="enterApprove"/>
+	</package>
+	
+	<!-- 理财信息管理 -->
+	<package name="finance" namespace="/finance"  extends="hf">
+		<action name="financelist" class="financeManagerAction" method="findFinanceList">
+			<result name="success">/finance/financelist.jsp</result>
+		</action>
+		<action name="financeadd" class="financeManagerAction" method="financeAdd">
+			<result name="success">/finance/financeenter.jsp</result>
+		</action>
+		<action name="financeenter" class="financeManagerAction" method="financeEnter"/>
+		<action name="financedelete" class="financeManagerAction" method="financeDelete"/>
+		<action name="financedetails" class="financeManagerAction" method="financeDetails">
+			<result name="success">/finance/financedetails.jsp</result>
+		</action>
+		<action name="financeedit" class="financeManagerAction" method="financeDetails">
+			<result name="success">/finance/financeedit.jsp</result>
+		</action>
+		<action name="financeupdate" class="financeManagerAction" method="financeUpdate">
+			<result name="input">/finance/financeedit.jsp</result>
+		</action>
+		<action name="enterapprove" class="financeManagerAction" method="enterApprove"/>
+		<action name="rebankapprove" class="financeManagerAction" method="rebankApprove"/>
+		<action name="rebank" class="financeManagerAction" method="rebankAmt"/>
+	</package>
+	
+	<!-- 借贷信息管理 -->
+	<package name="debitcredit" namespace="/debitcredit"  extends="hf">
+		<action name="debitcreditlist" class="debitcreditManagerAction" method="findDebitcreditList">
+			<result name="success">/debitcredit/debitcreditlist.jsp</result>
+		</action>
+		<action name="debitcreditadd" class="debitcreditManagerAction" method="debitcreditAdd">
+			<result name="success">/debitcredit/debitcreditenter.jsp</result>
+		</action>
+		<action name="debitcreditenter" class="debitcreditManagerAction" method="debitcreditEnter"/>
+		<action name="debitcreditdelete" class="debitcreditManagerAction" method="debitcreditDelete"/>
+		<action name="debitcreditdetails" class="debitcreditManagerAction" method="debitcreditDetails">
+			<result name="success">/debitcredit/debitcreditdetails.jsp</result>
+		</action>
+		<action name="debitcreditedit" class="debitcreditManagerAction" method="debitcreditDetails">
+			<result name="success">/debitcredit/debitcreditedit.jsp</result>
+		</action>
+		<action name="debitcreditupdate" class="debitcreditManagerAction" method="debitcreditUpdate">
+			<result name="input">/debitcredit/debitcreditedit.jsp</result>
+		</action>
+		<action name="enterapprove" class="debitcreditManagerAction" method="enterApprove"/>
+		<action name="rebankapprove" class="debitcreditManagerAction" method="rebankApprove"/>
+		<action name="rebank" class="debitcreditManagerAction" method="rebankAmt"/>
+	</package>
+</struts>

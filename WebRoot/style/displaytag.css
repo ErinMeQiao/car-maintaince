@@ -1,0 +1,155 @@
+ 	  @import url("maven-base.css");
+      @import url("maven-theme.css");
+      @import url("site.css");
+      @import url("screen.css");
+table.display {
+	border: 0px solid #BED4FF;
+	margin: 20px 0 20px 0 !important;
+	background-color:#BED4FF;
+}
+
+table.display th,table.display td {
+	padding: 2px 10px 2px 10px !important;
+	text-align: center;
+	vertical-align: midden;
+	height:13px;
+}
+.td2 {
+	padding: 2px 10px 2px 10px !important;
+	text-align: right;
+	vertical-align: midden;
+	height:13px;
+}
+
+table.display th{
+    background-color: #E7F2FE;
+}
+
+table.display thead tr {
+	background-color: #fc0;
+}
+
+table.display th.sorted {
+	background-color: #E7F2FE;
+}
+
+table.display th a,th a:visited {
+	color: black;
+}
+
+table.display th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+table.display th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 98%;
+}
+
+table.display th.sortable a {
+	background-image: url(../images/arrow_off.png);
+}
+
+table.display th.order1 a {
+	background-image: url(../images/arrow_down.png);
+}
+
+table.display th.order2 a {
+	background-image: url(../images/arrow_up.png);
+}
+
+table.display tr.odd {
+	background-color: #fff
+}
+abcover {
+	background-color: #F5FAFF
+}
+
+table.display tr.tableRowEven,tr.even {
+	background-color: #F5FAFF
+}
+
+div.exportlinks {
+/*	padding: 5px 4px 5px 4px;*/
+	padding: 6px 4px 1px 4px;
+	width: 100%;
+}
+span.export {
+	width: 30px;
+	padding: 0 4px 1px 20px;
+	cursor: pointer;
+}
+span.excel {
+	width: 15px;
+	margin:0 5px 0 0;
+	background: url(../images/ico_file_excel.png) 15px 0;
+}
+
+span.csv {
+	background-image: url(../images/ico_file_csv.png);
+}
+
+span.xml {
+	background: url(../images/ico_file_xml.png) 1px 0 no-repeat;
+}
+
+span.pdf {
+	width: 15px;
+	margin:0 5px 0 0;
+	background: url(../images/ico_file_pdf.png) 15px 0;
+}
+
+span.rtf {
+	background-image: url(../images/ico_file_rtf.png);
+}
+
+span.pagebanner {
+	padding: 10px 4px 1px 4px;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	/*padding: 5px 4px 1px 0;*/
+	padding: 1px 4px 1px 4px;
+	border-top: none;
+	margin-bottom: -5px;
+}
+
+
+.group-1 {
+    font-weight:bold;
+    padding-bottom:10px;
+    border-top:1px solid black;
+}
+.group-2 {
+    font-style:italic;
+    border-top: 1px solid black;
+
+}
+.subtotal-sum, .grandtotal-sum {
+    font-weight:bold;
+    text-align:right;
+}
+.subtotal-header {
+    padding-bottom: 0px;
+    border-top: 1px solid white;
+}
+.subtotal-label, .grandtotal-label {
+    border-top: 1px solid white;
+    font-weight: bold;
+}
+.grouped-table tr.even {
+    background-color: #fff;
+}
+.grouped-table tr.odd {
+    background-color: #fff;
+}
+.grandtotal-row {
+    border-top: 2px solid black;
+}
+table.display  tr.data_td2{
+    background-color: #FFFFFF;
+    font:12px Verdana; color:#000; text-decoration:none;
+}

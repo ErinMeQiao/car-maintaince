@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<appender name="STDOUT" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[changat] %p %d [%t] %C{1}.%M(%L) | %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DEBUG"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}//logs//changat_debug" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.txt'" />
+		<param name="Append" value="true" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[changat] %p %d [%t] %C{1}.%M(%L) | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="DEBUG" />
+		</filter>
+	</appender>
+
+	<appender name="INFO"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}//logs//changat_info" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.txt'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[changat] %p %d [%t] %C{1}.%M(%L) | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="INFO" />
+		</filter>
+	</appender>
+
+	<appender name="WARN"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}//logs//changat_warn" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.txt'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[changat] %p %d [%t] %C{1}.%M(%L) | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="WARN" />
+			<param name="LevelMax" value="WARN" />
+		</filter>
+	</appender>
+
+	<appender name="ERROR"
+		class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="${catalina.base}//logs//changat_error" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.txt'" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[changat] %p %d [%t] %C{1}.%M(%L) | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="ERROR" />
+			<param name="LevelMax" value="ERROR" />
+		</filter>
+	</appender>
+
+	<logger name="org">
+		<level value="error" />
+	</logger>
+	<logger name="net">
+		<level value="error" />
+	</logger>
+	<logger name="org.apache">
+		<level value="error" />
+	</logger>
+	<logger name="org.hibernate">
+		<level value="error" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="error" />
+	</logger>
+	<logger name="org.displaytag">
+		<level value="error" />
+	</logger>
+	<logger name="net.sf.ehcache">
+		<level value="error" />
+	</logger>
+	<logger name="com.mchange.v2">
+		<level value="error" />
+	</logger>
+	<logger name="com.opensymphony.xwork2">
+		<level value="error"></level>
+	</logger>
+	<logger name="org.slf4j.impl.Log4jLoggerFactory">
+		<level value="error"></level>
+	</logger>
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="DEBUG" />
+		<appender-ref ref="INFO" />
+		<appender-ref ref="WARN" />
+		<appender-ref ref="ERROR" />
+	</root>
+
+</log4j:configuration>
